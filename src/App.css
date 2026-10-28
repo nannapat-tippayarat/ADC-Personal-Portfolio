@@ -1,53 +1,184 @@
 
 .page {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 24px;
-  font-family: 'Quicksand', serif;
-  transition: background 0.3s;
+  font-family: 'Quicksand', sans-serif;
+  transition: background 0.3s, color 0.3s;
 }
 
-.window {
-  width: 100%;
-  max-width: 700px;
-  padding: 40px;
-  border: 2px solid;
-  border-radius: 20px;
+.navbar {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  max-width: 800px;
+  margin: 100px auto;
   text-align: center;
 }
 
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 400;
+}
+
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.section {
+  max-width: 1000px;
+  margin: 80px auto;
+  padding: 32px;
+  border: 1px solid currentColor;
+  border-radius: 20px;
+}
+
+.section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  font-size: 32px;
+}
+
+.project-card {
+  padding: 24px;
+  border: 1px solid currentColor;
+  border-radius: 16px;
+  max-width: 400px;
+}
+
+
+/* Pink theme */
 .pink {
-  background: #fff0f6;
+  background-color: #fff0f6;
   color: #713451;
 }
 
-.pink .window {
-  background: #ffe0ec;
+.pink .navbar {
+  border-bottom: 1px solid #e8a4c4;
+}
+
+/* Outer section */
+.pink .section {
+  background-color: #ffe0ec;
   border-color: #c76b95;
 }
 
+/* Individual project cards */
+.pink .project-card {
+  background-color: #fff0f6;
+  border-color: #e8a4c4;
+}
+
+/* Dark theme */
 .dark {
-  background: #27212e;
+  background-color: #27212e;
   color: #f5e5ff;
 }
 
-.dark .window {
-  background: #393044;
+.dark .navbar {
+  border-bottom: 1px solid #705a80;
+}
+
+.dark .section,
+.dark .project-card {
+  background-color: #393044;
   border-color: #a67bc7;
 }
 
 button {
   padding: 12px 20px;
-  background: #b45687;
+  background-color: #b45687;
   color: white;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-size: 16px;
+  font-family: inherit;
+  font-size: 15px;
+  transition: opacity 0.2s;
 }
 
 button:hover {
   opacity: 0.85;
 }
+
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.project-card {
+  max-width: none;
+  padding: 28px;
+  border: 1px solid;
+  border-radius: 18px;
+  transition: transform 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-emoji {
+  font-size: 42px;
+}
+
+.project-card h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  font-weight: 400;
+}
+
+.project-tech {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: #b45687;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.project-link:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 650px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
